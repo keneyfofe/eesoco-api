@@ -20,7 +20,7 @@ import za.co.eesoco.domain.Product;
 import za.co.eesoco.service.ProductService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class ProductResource {
 
 	@Autowired
@@ -28,21 +28,21 @@ public class ProductResource {
 
 	
 	@GetMapping("/products")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "*")
 	public List<Product> products() {
 		return productService.listAll();
 	}
 
 	
 	@PostMapping("/addProduct")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "*")
 	public void addProduct(@RequestBody Product product) {
 		productService.save(product);
 	}
 
 	
 	@GetMapping("/products/{id}")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<Product> getProduct(@PathVariable int id) {
 
 		try {
@@ -57,7 +57,7 @@ public class ProductResource {
 
 	
 	@PutMapping("/products/{id}")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "*")
 	public ResponseEntity<?> updateProduct(@RequestBody Product product, @PathVariable int id) {
 
 		try {
@@ -69,7 +69,7 @@ public class ProductResource {
 		}
 	}
 	@DeleteMapping("/products/{id}")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "*")
 	public void deleteProduct(@PathVariable int id) {
 		productService.deleteProduct(id);
 	}
