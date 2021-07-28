@@ -13,7 +13,7 @@ import za.co.eesoco.service.RegistrationService;
 
 @RestController
 
-@RequestMapping("/")
+@RequestMapping("/api")
 public class RegistrationAndLoginResource {
 
 	@Autowired

@@ -20,7 +20,7 @@ import za.co.eesoco.domain.Product;
 import za.co.eesoco.service.ProductService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 public class ProductResource {
 
 	@Autowired
